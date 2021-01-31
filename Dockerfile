@@ -1,5 +1,5 @@
 #######################################################################
-#            Laravel/Lumen 5.8 Application - Dockerfile v0.5          #
+#            Laravel Application - Dockerfile v1          #
 #######################################################################
 
 #------------- Setup Environment -------------------------------------------------------------
@@ -37,7 +37,10 @@ RUN apt-get install -y \
     php7.4-mbstring \ 
     php7.4-json \
     php7.4-xml \
-    php7.4-bcmath
+    php7.4-bcmath \
+    php7.4-intl \
+    php7.4-zip \
+    php7.4-gd
 
 # Install NPM and Node.js
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -

@@ -3,39 +3,39 @@ version: '3.7'
 services:
   mysql:  
     image: mysql:5.7
-    container_name: mysql
+    container_name: mysql_${APP_NAME}
     hostname: mysql
     environment:
-      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_root_password
-      - MYSQL_DATABASE=appdb
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD_FILE=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=${DB_ROOT_PW}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD_FILE=${DB_PW}
     restart: unless-stopped
     ports:
       - 127.0.0.1:3306:3306
     volumes:
       - mysql-data:/var/lib/mysql
-    secrets:
-      - db_root_password
-      - db_password
+#    secrets:
+#      - 
+#      - db_password
 
   app:
     build: .
-    container_name: app
+    container_name: app_${APP_NAME}
     hostname: app
     restart: unless-stopped
     volumes:
       - ./src:/var/www/html
     ports:
-      - "80:80"
+      - "${NGINX_PORT}:80"
     depends_on:
       - mysql
 
-secrets:
-  db_root_password:
-    file: db_root_password.txt
-  db_password:
-    file: db_password.txt
+#secrets:
+#  db_root_password:
+#    file: db_root_password.txt
+#  db_password:
+#    file: db_password.txt
 
 volumes:
   mysql-data:
