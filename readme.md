@@ -1,4 +1,4 @@
-# Laravel/Lumen Docker Scaffold
+# Laravel Docker Scaffold
 
 ### **Description**
 
@@ -8,20 +8,6 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
         Nginx, PHP7.4 PHP7.4-fpm, Composer, NPM, Node.js v10.x
     
 -  **mysql**, MySQL database container ([mysql](https://hub.docker.com/_/mysql/) official Docker image)
-
-#### **Directory Structure**
-```
-+-- src <project root>
-+-- resources
-|   +-- default
-|   +-- nginx.conf
-|   +-- supervisord.conf
-|   +-- www.conf
-+-- .gitignore
-+-- Dockerfile
-+-- docker-compose.yml
-+-- readme.md <this file>
-```
 
 ### **Setup instructions**
 
