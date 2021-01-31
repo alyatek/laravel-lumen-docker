@@ -29,6 +29,14 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
 
 * Depending on your OS, the appropriate version of Docker Community Edition has to be installed on your machine.  ([Download Docker Community Edition](https://hub.docker.com/search/?type=edition&offering=community))
 
+**Installation Improved:**
+
+1. Run this and skip to step 4.
+
+```bash
+make install
+```
+
 **Installation steps:** 
 
 1. Create a new directory in which your OS user has full read/write access and clone this repository inside.
@@ -53,17 +61,8 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
     **Laravel**
 
     ```
-    $ docker exec -it app bash
+    $ docker exec -it app_$APP_NAME bash
     $ composer create-project --prefer-dist laravel/laravel .
-    $ nano .env
-    $ php artisan migrate --seed
-    ```
-
-    **Lumen**
-
-    ```
-    $ docker exec -it app bash
-    $ composer create-project --prefer-dist laravel/lumen .
     $ nano .env
     $ php artisan migrate --seed
     ```
@@ -72,7 +71,7 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
 
 **Default configuration values** 
 
-The following values should be replaced in your `.env` file if you're willing to keep them as defaults:
+The following values should be replaced in your Laravel `.env` file if you're willing to keep them as defaults:
     
     DB_HOST=mysql
     DB_PORT=3306
