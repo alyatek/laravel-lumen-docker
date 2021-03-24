@@ -18,8 +18,8 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
 **Installation Improved:**
 
 1. Run this and skip to step 4.
-
 ```bash
+cp .example.env .env
 make install
 ```
 
