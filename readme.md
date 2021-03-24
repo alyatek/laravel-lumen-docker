@@ -22,6 +22,10 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
 cp .example.env .env
 make install
 ```
+1.1 Make .perms.sh executable
+```bash
+sudo chmod +x .perms.sh
+```
 
 **Installation steps:** 
 
